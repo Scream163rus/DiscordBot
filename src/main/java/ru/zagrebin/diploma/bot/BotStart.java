@@ -11,7 +11,7 @@ public class BotStart {
     private static MessageHandler messageHandler;
 
     public static void botStart() throws InterruptedException, LoginException {
-        JDA jda = new JDABuilder("ODA5Nzc0MTM1NzY0NzEzNDky.YCZ-7g.aW5XcSIaRAf7qADlM3Hsbxzy0lc")
+        JDA jda = new JDABuilder()
                 .addEventListeners(messageHandler)
                 .build();
         jda.awaitReady().getCategories().get(0).getTextChannels().get(0).sendMessage("Hello world");

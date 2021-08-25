@@ -5,29 +5,30 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import ru.zagrebin.diploma.models.Bunker;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 @Repository
 public interface BunkerRepo extends CrudRepository<Bunker, Long>{
     @Query("select baggage from Bunker")
-    ArrayList<String> findAllBaggage();
+    HashSet<String> findAllBaggage();
     @Query(value = "select additionalSkills from Bunker")
-   ArrayList<String> findAllAdditionalSkills();
+    HashSet<String> findAllAdditionalSkills();
     @Query(value ="select biologicalCharacteristics from Bunker")
-   ArrayList<String> findAllBiologicalCharacteristics();
+    HashSet<String>findAllBiologicalCharacteristics();
     @Query(value ="select catastrophe from Bunker")
-    ArrayList<String> findAllCatastrophe();
+    HashSet<String> findAllCatastrophe();
     @Query(value ="select descriptionsBunker from Bunker")
-    ArrayList<String> findAllDescriptionsBunker();
+    HashSet<String> findAllDescriptionsBunker();
     @Query(value ="select health from Bunker")
-    ArrayList<String> findAllHealth();
+    HashSet<String> findAllHealth();
     @Query(value = "select hobby from Bunker")
-    ArrayList<String> findAllHobby();
+    HashSet<String> findAllHobby();
     @Query(value ="select humanQuality from Bunker")
-    ArrayList<String> findAllHumanQuality();
+    HashSet<String> findAllHumanQuality();
     @Query(value = "select phobia from Bunker")
-    ArrayList<String> findAllPhobia();
+    HashSet<String> findAllPhobia();
     @Query(value ="select professions from Bunker")
-    ArrayList<String> findAllProfessions();
+    HashSet<String> findAllProfessions();
     @Query(value ="select specialConditions from Bunker")
-    ArrayList<String> findAllSpecialConditions();
+    HashSet<String> findAllSpecialConditions();
 }

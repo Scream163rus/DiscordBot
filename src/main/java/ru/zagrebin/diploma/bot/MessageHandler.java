@@ -4,12 +4,13 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.zagrebin.diploma.service.MafiaService;
 import ru.zagrebin.diploma.service.ServiceBunker;
+
 import java.util.concurrent.TimeUnit;
 
-@Component
+@Service
 public class MessageHandler extends ListenerAdapter {
     private ServiceBunker serviceBunker;
     private MafiaService mafiaService;
@@ -24,7 +25,6 @@ public class MessageHandler extends ListenerAdapter {
         messageHandlerHelp(event);
         messageHandlerAnotherMessage(event);
         messageHandlerBunker(event);
-
     }
     public void messageHandlerMafia(@NotNull MessageReceivedEvent event){
         if (event.getMessage().getContentDisplay().split(" ")[0].equalsIgnoreCase("!Mafia")) {

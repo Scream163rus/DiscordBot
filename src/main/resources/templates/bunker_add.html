@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<div>
+    <form method="post", action="/add">
+        <h1>Add</h1>
+        <textarea name="catastrophe" placeholder="Описание катастрофы"></textarea>
+        <br/><textarea name="descriptionsBunker" placeholder="Описание бункера"></textarea>
+        <br/><input type="text" name="baggage" placeholder="Багаж">
+        <br/><input type="text" name="health" placeholder="Здоровье">
+        <br/><input type="text" name="biologicalCharacteristics" placeholder="Пол,возраст,плодовитость">
+        <br/><input type="text" name="hobby" placeholder="Хобби">
+        <br/><input type="text" name="humanQuality" placeholder="Человеческая черта">
+        <br/><input type="text" name="phobia" placeholder="Фобия">
+        <br/><input type="text" name="additionalSkills" placeholder="Карта действия">
+        <br/><input type="text" name="specialConditions" placeholder="Спец условия">
+        <br/><input type="text" name="professions" placeholder="Профессия">
+        <br/><button type="submit">Добавить</button>
+    </form>
+</div>
+
+<div th:each="el : ${bunker}">
+    <form method="post" th:action="'/' + ${el.id} + '/remove'">
+    <b th:text="${el.id}"></b>
+    <span th:text="${el.catastrophe}"></span>
+    <span th:text="${el.descriptionsBunker}"></span>
+    <span th:text="${el.health}"></span>
+    <span th:text="${el.baggage}"></span>
+    <span th:text="${el.biologicalCharacteristics}"></span>
+    <span th:text="${el.hobby}"></span>
+    <span th:text="${el.humanQuality}"></span>
+    <span th:text="${el.phobia}"></span>
+    <span th:text="${el.additionalSkills}"></span>
+    <span th:text="${el.specialConditions}"></span>
+    <span th:text="${el.professions}"></span>
+    <button type="submit" class="btn-success">Delete</button>
+    </form>
+</div>
+</body>
+</html>
